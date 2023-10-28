@@ -16,6 +16,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private Integer age;
+
+    @Column(nullable)
+    List<UserSex> userSexList;
 
 
 }

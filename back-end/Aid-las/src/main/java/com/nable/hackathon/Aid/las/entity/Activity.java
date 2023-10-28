@@ -18,10 +18,22 @@ public class Activity {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false, Default = "")
+    private String description;
+
+    @Column(nullable = false)
+    private String location;
+
+    @Column(nullable = false)
+    private LocalDateTime startTime;
+
     @Column
     List<ActivityTag> activityTagList;
 
     @Column(nullable = false)
     private Integer organizerId;
+
+    @Column
+    private Integer maxAttendees;
 
 }
