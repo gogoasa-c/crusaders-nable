@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 @Service
 public class AttendeeService {
     @Resource
-    private AttendeeRepository attendeeService;
+    private AttendeeRepository attendeeRepository;
 }

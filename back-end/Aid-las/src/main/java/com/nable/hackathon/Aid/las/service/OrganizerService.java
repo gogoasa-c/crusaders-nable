@@ -1,5 +1,6 @@
 package com.nable.hackathon.Aid.las.service;
 
+import com.nable.hackathon.Aid.las.repository.OrganizerRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -7,5 +8,5 @@ import org.springframework.stereotype.Service;
 public class OrganizerService {
 
     @Resource
-    private OrganizerService organizerService;
+    private OrganizerRepository organizerRepository;
 }
