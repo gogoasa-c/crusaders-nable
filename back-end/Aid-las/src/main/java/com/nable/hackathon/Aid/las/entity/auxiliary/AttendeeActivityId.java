@@ -1,7 +1,6 @@
 package com.nable.hackathon.Aid.las.entity.auxiliary;
 
 
-import jakarta.persistence.Id;
 
 import java.io.Serializable;
 
