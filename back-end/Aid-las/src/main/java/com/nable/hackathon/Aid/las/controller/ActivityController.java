@@ -46,6 +46,7 @@ public class ActivityController {
         log.info("Entered deleteActivity with activityId: {}", activityId);
 
         // to be modified with service method call
+        activityService.deleteActivity(activityId);
         return ResponseEntity.noContent().build();
     }
 
