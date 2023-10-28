@@ -5,8 +5,6 @@ import com.nable.hackathon.Aid.las.data.activity.ActivityRequestData;
 import com.nable.hackathon.Aid.las.data.activity.ActivityResponseData;
 import com.nable.hackathon.Aid.las.entity.Activity;
 
-import java.time.LocalDateTime;
-import java.util.List;
 
 public class ActivityMapper {
     public static ActivityResponseData toActivityResponseData(Activity activity) {
