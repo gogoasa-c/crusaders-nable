@@ -1,14 +1,12 @@
 package com.nable.hackathon.Aid.las.entity;
 
 import com.nable.hackathon.Aid.las.common.ActivityTag;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -23,6 +21,11 @@ public class Activity {
 
     @Column(nullable = false)
     private String name;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userId")
+    Set<User> attendees;
+
 
     @Column
     private String description;
@@ -39,10 +42,13 @@ public class Activity {
     @Column
     List<ActivityTag> activityTagList;
 
+    /*@ManyToOne
+    @JoinColumn(name = "organizerId")
+    private Organizer organizer;*/
+
     @Column(nullable = false)
     private Integer organizerId;
 
     @Column
     private Integer maxAttendees;
-
 }

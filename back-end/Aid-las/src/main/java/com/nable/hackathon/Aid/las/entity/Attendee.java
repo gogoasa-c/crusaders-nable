@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
 @Entity
-@SuperBuilder
 @AllArgsConstructor
 public class Attendee extends User {
 

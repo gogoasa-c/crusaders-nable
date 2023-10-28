@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,11 +24,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "activityId")
+    Set<Activity> activities;
+
     @Column
     private Integer age;
 
     @Column
     UserSex userSex;
-
-
 }

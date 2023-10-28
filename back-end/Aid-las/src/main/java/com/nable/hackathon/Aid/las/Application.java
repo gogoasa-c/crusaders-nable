@@ -3,8 +3,12 @@ package com.nable.hackathon.Aid.las;
 
 import com.nable.hackathon.Aid.las.common.ActivityTag;
 import com.nable.hackathon.Aid.las.entity.Activity;
+import com.nable.hackathon.Aid.las.entity.Attendee;
 import com.nable.hackathon.Aid.las.entity.Organizer;
+import com.nable.hackathon.Aid.las.entity.User;
+//import com.nable.hackathon.Aid.las.entity.auxiliary.AuxiliaryAttendeeActivity;
 import com.nable.hackathon.Aid.las.repository.ActivityRepository;
+import com.nable.hackathon.Aid.las.repository.AttendeeRepository;
 import com.nable.hackathon.Aid.las.repository.OrganizerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,6 +28,10 @@ public class Application implements CommandLineRunner {
 
 	@Autowired
 	private ActivityRepository activityRepository;
+
+	@Autowired
+	private AttendeeRepository attendeeRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -47,6 +55,7 @@ public class Application implements CommandLineRunner {
 		activity.setDescription("Description 1");
 		activity.setActivityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE));
 		activity.setActivityId(1);
+		//activity.setOrganizer(organizer);
 		activity.setOrganizerId(1);
 		activity.setLocation("Bucharest, Dorobanti, 25");
 		activity.setStartTime(LocalDateTime.of(2021, 10, 10, 10, 10));
@@ -68,5 +77,18 @@ public class Application implements CommandLineRunner {
 				.maxAttendees(10)
 				.build()
 		);
+		activityRepository.findById(1).ifPresent(System.out::println);
+
+		User user = new User();
+		user.setUserId(5);
+		user.setUsername("User 1");
+		user.setPassword("sfklgdf");
+
+		Attendee attendee = new Attendee();
+		attendee.setUserId(2);
+		attendee.setUsername("Attendee 1");
+		attendee.setPassword("sfklgdf");
+
+		attendeeRepository.save(attendee);
 	}
 }
