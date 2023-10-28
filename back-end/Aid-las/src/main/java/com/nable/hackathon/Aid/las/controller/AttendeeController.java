@@ -48,4 +48,12 @@ public class AttendeeController {
         // to be modified with service method call
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/user/{username}")
+    public ResponseEntity<Void> getAttendeeByUsername(@PathVariable String username, @RequestBody String password) {
+        log.info("Entered getAttendeeByUsername with username: {}", username);
+
+        // to be modified with service method call
+        return ResponseEntity.noContent().build();
+    }
 }
