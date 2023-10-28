@@ -21,15 +21,15 @@ public class AttendeeController {
         log.info("Entered getAttendee with attendeeId: {}", attendeeId);
 
         // to be modified with service method call
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(attendeeService.getAttendee(attendeeId));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<AttendeeResponseData> createAttendee(@RequestBody Attendee attendee) {
+    public ResponseEntity<AttendeeResponseData> createAttendee(@RequestBody AttendeeRequestData attendeeRequestData) {
         log.info("Entered createAttendee");
 
         // to be modified with service method call
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(attendeeService.createAttendee(attendeeRequestData));
     }
 
     @PutMapping("/{attendeeId}")
