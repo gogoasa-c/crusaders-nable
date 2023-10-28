@@ -2,6 +2,7 @@ package com.nable.hackathon.Aid.las;
 
 
 import com.nable.hackathon.Aid.las.common.ActivityTag;
+import com.nable.hackathon.Aid.las.common.UserSex;
 import com.nable.hackathon.Aid.las.entity.Activity;
 import com.nable.hackathon.Aid.las.entity.Attendee;
 import com.nable.hackathon.Aid.las.entity.Organizer;
@@ -45,6 +46,8 @@ public class Application implements CommandLineRunner {
 	public void populateActivities() {
 		Organizer organizer = new Organizer();
 		organizer.setUserId(1);
+		organizer.setUserSex(UserSex.MALE);
+		organizer.setAge(10);
 		organizer.setUsername("Organizer 1");
 		organizer.setPassword("sfklgdf");
 
@@ -86,6 +89,8 @@ public class Application implements CommandLineRunner {
 
 		Attendee attendee = new Attendee();
 		attendee.setUserId(2);
+		attendee.setAge(10);
+		attendee.setUserSex(UserSex.MALE);
 		attendee.setUsername("Attendee 1");
 		attendee.setPassword("sfklgdf");
 

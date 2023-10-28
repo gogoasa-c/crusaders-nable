@@ -20,7 +20,7 @@ public class OrganizerMapper {
         organizer.setAge(organizerRequestData.getAge());
         organizer.setUsername(organizerRequestData.getUsername());
         organizer.setPassword(organizerRequestData.getPassword());
-        organizer.setUserSex(UserSex.valueOf(organizerRequestData.getUserSex()));
+        organizer.setUserSex(UserSex.valueOf(organizerRequestData.getUserSex().toUpperCase()));
 
         return organizer;
     }
