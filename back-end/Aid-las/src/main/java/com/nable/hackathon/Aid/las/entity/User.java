@@ -1,7 +1,10 @@
 package com.nable.hackathon.Aid.las.entity;
 
+import com.nable.hackathon.Aid.las.common.UserSex;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -16,11 +19,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    @Column
     private Integer age;
 
-    @Column(nullable)
-    List<UserSex> userSexList;
+    @Column
+    UserSex userSexList;
 
 
 }

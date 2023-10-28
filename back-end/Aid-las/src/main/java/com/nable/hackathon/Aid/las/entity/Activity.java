@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Activity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, Default = "")
+    @Column
     private String description;
 
     @Column(nullable = false)
