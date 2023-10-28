@@ -21,16 +21,14 @@ public class ActivityController {
     public ResponseEntity<ActivityResponseData> getActivity(@PathVariable Integer activityId) {
         log.info("Entered getActivity with activityId: {}", activityId);
 
-        // to be modified with service method call
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(activityService.getActivity(activityId));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ActivityResponseData> createActivity(@RequestBody Activity activity) {
-        log.info("Entered createActivity with activity: {}", activity);
+    public ResponseEntity<ActivityResponseData> createActivity(@RequestBody ActivityRequestData activityRequestData) {
+        log.info("Entered createActivity with activity: {}", activityRequestData);
 
-        // to be modified with service method call
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(activityService.createActivity(activityRequestData)));
     }
 
     @PutMapping("/{activityId}/update")
