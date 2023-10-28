@@ -1,5 +1,5 @@
 import './App.css';
-import logo from "C:\\Users\\tiber\\crusaders-nable\\front-end\\src\\logo_noBG.png";
+import logo from "./logo_noBG.png";
 //import { useState } from 'react'
 import SearchIcon from './components/search.svg'
 import Event from './components/event.jsx'
@@ -12,6 +12,27 @@ let imageUrls=["https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat
 let locations=["Location1", "Location2", "Location3", "Location4", "Location5"]
 let startTimes=["Time1", "Time2", "Time3", "Time4", "Time5"]
 //new Date(startTime)
+
+const callDb = () => {
+  let url = "http://localhost:8080/activity/all";
+
+  axios.get(url).then(
+    (response) => {
+      let responseData = response.data;
+      responseData.forEach(element => {
+        names.push(element['name']);
+        imageUrls.push(element['imageUrl']);
+        locations.push(element['location']);
+        startTimes.push(element['startTime']);
+        descriptions.push(element['description']);
+        activityTags.push(element['activityTagList']);
+      });
+      
+    }
+  )
+}
+
+callDb();
 
 const generateList = ()=>{
   let content=[]
@@ -56,11 +77,12 @@ function App() {
             <img className="search_icon"src={SearchIcon} onClick={()=>{console.log("BOO")}}></img>
           </div>
           <div className="userContainer">
-            <a href="#" className="btn_login"><span>Login</span></a>
+            <a href="#" className="btn_login" onClick={()=>{document.getElementById('popup-login').style.visibility="visible"}}><span>Login</span></a>
+            <a href="https://paypal.me/aidatlas?country.x=RO&locale.x=en_US" className="btn_donate"><span>Donate</span></a>
           </div>
             {/* <button type="button" onclick="openPopup()"><span>Login</span></button> */}
-            <div className="popup" id="popup">
-              <div className="btn-close">&times;</div>
+            <div className="popup" id="popup-login">
+              <div className="btn-close" onClick={()=>{document.getElementById('popup-login').style.visibility="hidden"}}>&times;</div>
               <div className="form">
                 <h2>Log in</h2>
                 <div className="form-element">
@@ -71,15 +93,28 @@ function App() {
                   <label for="password">Password</label>
                   <input type="password" id="password" placeholder="Enter password"></input>
                 </div>
-                {/* <div className="form-element">
-                  <label for="remember-me">Remember me</label>
-                  <input type="checkbox" id="remember me"></input>
-                </div> */}
                 <div className="form-element">
-                  <button type="button" onClick={()=>{document.querySelector(".popup").classList.remove("active")}}>Sign in</button>
+                  <button type="button" onClick={()=>{document.getElementById('popup-login').style.visibility="hidden"}}>Sign in</button>
                 </div>
                 <div className="form-element">
                     <a href="#">Forgot password?</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="popup" id="popup-donate">
+              <div className="btn-close" onClick={()=>{document.getElementById('popup-donate').style.visibility="hidden"}}>&times;</div>
+              <div className="form">
+                <h2>Donate</h2>
+                <div className="form-element">
+                  
+                </div>
+                <div className="form-element">
+                  
+                </div>
+                <div className="form-element">
+                  <button type="button" onClick={()=>{document.getElementById('popup-donate').style.visibility="hidden"}}>Donate</button>
                 </div>
               </div>
             </div>
