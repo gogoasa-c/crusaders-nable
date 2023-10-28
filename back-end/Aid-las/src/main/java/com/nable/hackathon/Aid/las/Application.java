@@ -65,7 +65,7 @@ public class Application implements CommandLineRunner {
 		activity.setLocation("Bucharest, Dorobanti, 25");
 		activity.setStartTime(LocalDateTime.of(2021, 10, 10, 10, 10));
 		activity.setMaxAttendees(10);
-		activity.setImageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockph");
+		activity.setImageUrl("https://en.wikipedia.org/wiki/Recycling#/media/File:Recycling_symbol.svg");
 
 		activityRepository.save(activity);
 
@@ -77,7 +77,7 @@ public class Application implements CommandLineRunner {
 				.activityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE))
 				.organizerId(1)
 				.location("Bucharest, Dorobanti, 25")
-				.imageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockph")
+				.imageUrl("https://en.wikipedia.org/wiki/Cat#/media/File:Tabby_cat_with_visible_nictitating_membrane.jpg")
 				.startTime(LocalDateTime.of(2021, 10, 10, 10, 10))
 				.maxAttendees(10)
 				.build()
