@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 public class AttendeeController {
     @Resource
     public AttendeeService attendeeService;
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{attendeeId}")
     public ResponseEntity<AttendeeResponseData> getAttendee(@PathVariable Integer attendeeId) {
         log.info("Entered getAttendee with attendeeId: {}", attendeeId);
@@ -24,6 +26,7 @@ public class AttendeeController {
         return ResponseEntity.ok(attendeeService.getAttendee(attendeeId));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/create")
     public ResponseEntity<AttendeeResponseData> createAttendee(@RequestBody AttendeeRequestData attendeeRequestData) {
         log.info("Entered createAttendee");
@@ -32,6 +35,7 @@ public class AttendeeController {
         return ResponseEntity.ok(attendeeService.createAttendee(attendeeRequestData));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/{attendeeId}")
     public ResponseEntity<AttendeeResponseData> updateAttendee(@PathVariable Integer attendeeId,
                                                                @RequestBody AttendeeRequestData attendee) {
@@ -41,6 +45,7 @@ public class AttendeeController {
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{attendeeId}")
     public ResponseEntity<Void> deleteAttendee(@PathVariable Integer attendeeId) {
         log.info("Entered deleteAttendee with attendeeId: {}", attendeeId);
@@ -49,6 +54,7 @@ public class AttendeeController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/user/{username}")
     public ResponseEntity<Boolean> getAttendeeByUsername(@PathVariable String username, @RequestBody String password) {
         log.info("Entered getAttendeeByUsername with username: {}", username);

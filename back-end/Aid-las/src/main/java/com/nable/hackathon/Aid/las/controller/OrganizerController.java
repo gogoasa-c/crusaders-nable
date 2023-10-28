@@ -17,6 +17,7 @@ public class OrganizerController {
     @Resource
     public OrganizerService organizerService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{organizerId}")
     public ResponseEntity<OrganizerResponseData> getOrganizer(@PathVariable Integer organizerId) {
         log.info("Entered getOrganizer with organizerId: {}", organizerId);
@@ -24,6 +25,7 @@ public class OrganizerController {
         return ResponseEntity.ok(organizerService.getOrganizer(organizerId));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/create")
     public ResponseEntity<OrganizerResponseData> createOrganizer(@RequestBody OrganizerRequestData organizerRequestData) {
         log.info("Entered createOrganizer");
@@ -31,6 +33,7 @@ public class OrganizerController {
         return ResponseEntity.ok(organizerService.createOrganizer(organizerRequestData));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/{organizerId}/update")
     public ResponseEntity<OrganizerResponseData> updateOrganizer(@PathVariable Integer organizerId,
                                                                  @RequestBody OrganizerRequestData organizer) {
@@ -39,6 +42,7 @@ public class OrganizerController {
         return ResponseEntity.ok(organizerService.updateOrganizer(organizerId, organizer));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{organizerId}/delete")
     public ResponseEntity<Void> deleteOrganizer(@PathVariable Integer organizerId) {
         log.info("Entered deleteOrganizer with organizerId: {}", organizerId);
