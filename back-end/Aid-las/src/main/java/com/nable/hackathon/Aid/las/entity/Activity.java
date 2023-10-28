@@ -25,7 +25,7 @@ public class Activity {
     @Column(nullable = false)
     private String location;
 
-    @Column(nullable = false)
+    @Column
     private LocalDateTime startTime;
 
     @Column

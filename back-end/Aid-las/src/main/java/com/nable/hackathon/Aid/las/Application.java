@@ -45,6 +45,7 @@ public class Application implements CommandLineRunner {
 		activity.setActivityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE));
 		activity.setActivityId(1);
 		activity.setOrganizerId(1);
+		activity.setLocation("Bucharest, Dorobanti, 25");
 
 		activityRepository.save(activity);
 
