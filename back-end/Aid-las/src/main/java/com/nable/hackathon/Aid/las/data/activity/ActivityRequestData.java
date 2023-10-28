@@ -10,6 +10,7 @@ import java.util.List;
 public class ActivityRequestData {
     private String name;
     private String description;
+    private String imageUrl;
     private String location;
     private LocalDateTime startTime;
     private List<String> activityTagList;

@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -80,5 +81,22 @@ public class ActivityService {
 
 
         return ActivityMapper.toActivityResponseData(activity);
+    }
+
+    public void deleteActivity(Integer activityId) {
+        activityRepository.findById(activityId)
+            .orElseThrow(() -> new RuntimeException("Activity not found"));
+
+        activityRepository.deleteById(activityId);
+    }
+
+    public List<ActivityResponseData> getAllActivities() {
+        Iterable<Activity> activities = activityRepository.findAll();
+        List<Activity> activityList = new ArrayList<>();
+        activities.forEach(activityList::add);
+
+        return activityList.stream()
+            .map(ActivityMapper::toActivityResponseData)
+            .toList();
     }
 }

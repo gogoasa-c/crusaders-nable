@@ -11,6 +11,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @SpringBootApplication
@@ -42,13 +44,29 @@ public class Application implements CommandLineRunner {
 
 		Activity activity = new Activity();
 		activity.setName("Activity 1");
+		activity.setDescription("Description 1");
 		activity.setActivityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE));
 		activity.setActivityId(1);
 		activity.setOrganizerId(1);
 		activity.setLocation("Bucharest, Dorobanti, 25");
+		activity.setStartTime(LocalDateTime.of(2021, 10, 10, 10, 10));
+		activity.setMaxAttendees(10);
+		activity.setImageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockph");
 
 		activityRepository.save(activity);
 
-		activityRepository.findById(1).ifPresent(System.out::println);
+		activityRepository.save(
+			Activity.builder()
+				.activityId(2)
+				.name("Activity 2")
+				.description("Description 2")
+				.activityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE))
+				.organizerId(1)
+				.location("Bucharest, Dorobanti, 25")
+				.imageUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockph")
+				.startTime(LocalDateTime.of(2021, 10, 10, 10, 10))
+				.maxAttendees(10)
+				.build()
+		);
 	}
 }

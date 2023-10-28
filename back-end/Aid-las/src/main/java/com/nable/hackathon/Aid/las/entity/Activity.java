@@ -13,6 +13,8 @@ import java.util.List;
 @Entity
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Activity {
 
     @Id
@@ -24,6 +26,9 @@ public class Activity {
 
     @Column
     private String description;
+
+    @Column(nullable = true)
+    private String imageUrl;
 
     @Column(nullable = false)
     private String location;

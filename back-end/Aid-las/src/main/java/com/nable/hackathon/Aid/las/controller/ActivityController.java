@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/activity")
 @Slf4j
@@ -28,7 +30,7 @@ public class ActivityController {
     public ResponseEntity<ActivityResponseData> createActivity(@RequestBody ActivityRequestData activityRequestData) {
         log.info("Entered createActivity with activity: {}", activityRequestData);
 
-        return ResponseEntity.ok(activityService.createActivity(activityRequestData)));
+        return ResponseEntity.ok(activityService.createActivity(activityRequestData));
     }
 
     @PutMapping("/{activityId}/update")
@@ -36,8 +38,7 @@ public class ActivityController {
                                                                @RequestBody ActivityRequestData activity) {
         log.info("Entered updateActivity with activityId: {} and activity: {}", activityId, activity);
 
-        // to be modified with service method call
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(activityService.updateActivity(activityId, activity));
     }
 
     @DeleteMapping("/{activityId}/delete")
@@ -48,4 +49,10 @@ public class ActivityController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<ActivityResponseData>> getAllActivities() {
+        log.info("Entered getAllActivities");
+
+        return ResponseEntity.ok(activityService.getAllActivities());
+    }
 }

@@ -8,6 +8,7 @@ import lombok.Data;
 public class ActivityResponseData {
     private String name;
     private String description;
+    private String imageUrl;
     private String location;
     private String startTime;
     private String activityTagList;
