@@ -7,7 +7,6 @@ import com.nable.hackathon.Aid.las.entity.Activity;
 import com.nable.hackathon.Aid.las.entity.Attendee;
 import com.nable.hackathon.Aid.las.entity.Organizer;
 import com.nable.hackathon.Aid.las.entity.User;
-//import com.nable.hackathon.Aid.las.entity.auxiliary.AuxiliaryAttendeeActivity;
 import com.nable.hackathon.Aid.las.repository.ActivityRepository;
 import com.nable.hackathon.Aid.las.repository.AttendeeRepository;
 import com.nable.hackathon.Aid.las.repository.OrganizerRepository;
