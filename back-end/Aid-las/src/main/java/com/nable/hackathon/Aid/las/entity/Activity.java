@@ -26,7 +26,6 @@ public class Activity {
     @JoinColumn(name = "userId")
     Set<User> attendees;
 
-
     @Column
     private String description;
 

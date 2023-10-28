@@ -19,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -95,5 +96,78 @@ public class Application implements CommandLineRunner {
 		attendee.setPassword("sfklgdf");
 
 		attendeeRepository.save(attendee);
+
+		//hardcodare populare activitati/evenimente
+		Organizer organizer1 = new Organizer();
+		organizer1.setUserId(10);
+		organizer1.setUsername("Marian Dumitrescu");
+		organizer1.setPassword("parola10");
+		organizer1.setAge(40);
+		organizer1.setUserSex(UserSex.MALE);
+
+		organizerRepository.save(organizer1);
+
+		Organizer organizer2 = new Organizer();
+		organizer2.setUserId(11);
+		organizer2.setUsername("Maria Popescu");
+		organizer2.setPassword("parola11");
+		organizer2.setAge(33);
+		organizer2.setUserSex(UserSex.FEMALE);
+
+		organizerRepository.save(organizer2);
+
+		Attendee attendee1 = new Attendee();
+		attendee1.setUserId(100);
+		attendee1.setUsername("Dorin Miron");
+		attendee1.setPassword("parola100");
+		attendee1.setAge(18);
+		attendee1.setUserSex(UserSex.MALE);
+
+		attendeeRepository.save(attendee1);
+
+		Attendee attendee2 = new Attendee();
+		attendee2.setUserId(101);
+		attendee2.setUsername("Alina Florescu");
+		attendee2.setPassword("parola101");
+		attendee2.setAge(24);
+		attendee2.setUserSex(UserSex.FEMALE);
+
+		attendeeRepository.save(attendee2);
+
+		Activity activity1 = new Activity();
+		activity1.setActivityId(10);
+		activity1.setName("Plantare flori exotice");
+		activity1.setAttendees(Set.of(attendee1, attendee2));
+		activity1.setDescription("Impreuna cu 2 experti gradinari vom planta 11 tipuri diferite de " +
+				"flori exotice adunate din Europa, Asia, Australia si America de Sud.");
+		activity1.setImageUrl("back-end/Aid-las/src/main/java/com/nable/hackathon/Aid/las/hardCodedImages/Exotic_Flowers.jpg");
+		activity1.setLocation("Bucuresti, Gradina Botanica");
+		activity1.setStartTime(LocalDateTime.of(2023, 11, 7, 8, 30));
+		activity1.setActivityTagList(List.of(ActivityTag.PLANTING));
+		activity1.setOrganizerId(10);
+		activity1.setMaxAttendees(100);
+
+		activityRepository.save(activity1);
+
+		Activity activity2 = new Activity();
+		activity2.setActivityId(11);
+		activity2.setName("Curatenie in parcul Herastrau");
+		activity2.setAttendees(Set.of(attendee1, attendee2));
+		activity2.setDescription("Vom curata parcul Herastrau de gunoaie");
+		activity2.setImageUrl("back-end/Aid-las/src/main/java/com/nable/hackathon/Aid/las/hardCodedImages/" +
+				"Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG");
+		activity2.setLocation("Bucuresti, Parcul Herastrau");
+		activity2.setStartTime(LocalDateTime.of(2023, 11, 10, 10, 0));
+		activity2.setActivityTagList(List.of(ActivityTag.CLEANUP));
+		activity2.setOrganizerId(11);
+		activity2.setMaxAttendees(50);
+
+		activityRepository.save(activity2);
+
+		organizer1.setActivities(Set.of(activity1));
+		organizer2.setActivities(Set.of(activity2));
+
+		organizerRepository.save(organizer1);
+		organizerRepository.save(organizer2);
 	}
 }
