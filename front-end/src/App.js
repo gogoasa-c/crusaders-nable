@@ -86,11 +86,11 @@ function App() {
               <div className="form">
                 <h2>Log in</h2>
                 <div className="form-element">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input type="text" id="email" placeholder="Enter email"></input>
                 </div>
                 <div className="form-element">
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input type="password" id="password" placeholder="Enter password"></input>
                 </div>
                 <div className="form-element">
