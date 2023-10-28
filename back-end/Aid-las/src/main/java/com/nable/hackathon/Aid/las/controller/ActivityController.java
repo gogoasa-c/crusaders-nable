@@ -51,6 +51,7 @@ public class ActivityController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000") 
     @GetMapping("/all")
     public ResponseEntity<List<ActivityResponseData>> getAllActivities() {
         log.info("Entered getAllActivities");
