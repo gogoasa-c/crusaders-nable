@@ -33,8 +33,9 @@ public class ActivityService {
         return ActivityMapper.toActivityResponseData(activity.get());
     }
 
-    public ActivityResponseData createActivity(ActivityRequestData activityRequestData) {
+    public ActivityResponseData createActivity(ActivityRequestData activityRequestData, String username) {
         Activity activity = ActivityMapper.fromActivityRequestData(activityRequestData);
+
 
         if (activityRepository.save(activity) == null) {
             throw new RuntimeException("Activity not created");

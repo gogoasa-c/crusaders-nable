@@ -27,10 +27,11 @@ public class ActivityController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ActivityResponseData> createActivity(@RequestBody ActivityRequestData activityRequestData) {
+    public ResponseEntity<ActivityResponseData> createActivity(@RequestBody ActivityRequestData activityRequestData,
+                                                               @RequestHeader("username") String username) {
         log.info("Entered createActivity with activity: {}", activityRequestData);
 
-        return ResponseEntity.ok(activityService.createActivity(activityRequestData));
+        return ResponseEntity.ok(activityService.createActivity(activityRequestData, username));
     }
 
     @PutMapping("/{activityId}/update")
