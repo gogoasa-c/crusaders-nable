@@ -50,10 +50,10 @@ public class AttendeeController {
     }
 
     @PostMapping("/user/{username}")
-    public ResponseEntity<Void> getAttendeeByUsername(@PathVariable String username, @RequestBody String password) {
+    public ResponseEntity<Boolean> getAttendeeByUsername(@PathVariable String username, @RequestBody String password) {
         log.info("Entered getAttendeeByUsername with username: {}", username);
 
         // to be modified with service method call
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(attendeeService.getAttendeeByUsername(username, password));
     }
 }

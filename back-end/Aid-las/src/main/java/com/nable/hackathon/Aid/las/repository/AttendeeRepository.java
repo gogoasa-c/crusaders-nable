@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AttendeeRepository extends CrudRepository<Attendee, Integer> {
+    public Boolean existsByUsernameAndPassword(String username, String password);
 }

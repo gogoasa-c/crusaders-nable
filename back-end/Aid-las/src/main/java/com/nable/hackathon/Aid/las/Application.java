@@ -65,7 +65,7 @@ public class Application implements CommandLineRunner {
 		activity.setLocation("Bucharest, Dorobanti, 25");
 		activity.setStartTime(LocalDateTime.of(2021, 10, 10, 10, 10));
 		activity.setMaxAttendees(10);
-		activity.setImageUrl("https://en.wikipedia.org/wiki/Recycling#/media/File:Recycling_symbol.svg");
+		activity.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Recycling_symbol.svg/1024px-Recycling_symbol.svg.png");
 
 		activityRepository.save(activity);
 
@@ -77,7 +77,7 @@ public class Application implements CommandLineRunner {
 				.activityTagList(List.of(ActivityTag.CLEANUP, ActivityTag.SENIOR_CARE))
 				.organizerId(1)
 				.location("Bucharest, Dorobanti, 25")
-				.imageUrl("https://en.wikipedia.org/wiki/Cat#/media/File:Tabby_cat_with_visible_nictitating_membrane.jpg")
+				.imageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Tabby_cat_with_visible_nictitating_membrane.jpg/800px-Tabby_cat_with_visible_nictitating_membrane.jpg")
 				.startTime(LocalDateTime.of(2021, 10, 10, 10, 10))
 				.maxAttendees(10)
 				.build()
@@ -95,7 +95,7 @@ public class Application implements CommandLineRunner {
 		attendee.setAge(10);
 		attendee.setUserSex(UserSex.MALE);
 		attendee.setUsername("Attendee 1");
-		attendee.setPassword("sfklgdf");
+		attendee.setPassword("password");
 		attendee.setEmail("zzzz@ssss");
 
 		attendeeRepository.save(attendee);
@@ -161,7 +161,7 @@ public class Application implements CommandLineRunner {
 		activity2.setName("Curatenie in parcul Herastrau");
 		activity2.setAttendees(Set.of(attendee1, attendee2));
 		activity2.setDescription("Vom curata parcul Herastrau de gunoaie");
-		activity2.setImageUrl("https://en.wikipedia.org/wiki/King_Michael_I_Park#/media/File:Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG");
+		activity2.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG/1280px-Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG");
 		activity2.setLocation("Bucuresti, Parcul Herastrau");
 		activity2.setStartTime(LocalDateTime.of(2023, 11, 10, 10, 0));
 		activity2.setActivityTagList(List.of(ActivityTag.CLEANUP));

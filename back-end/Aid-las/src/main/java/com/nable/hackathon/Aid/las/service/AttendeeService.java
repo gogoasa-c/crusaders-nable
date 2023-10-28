@@ -96,4 +96,8 @@ public class AttendeeService {
             .map(AttendeeMapper::toAttendeeResponseData)
             .toList();
     }
+
+    public Boolean getAttendeeByUsername(String username, String password) {
+        return attendeeRepository.existsByUsernameAndPassword(username, password);
+    }
 }
