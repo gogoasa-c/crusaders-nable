@@ -41,6 +41,14 @@
   cursor: pointer
 }
 
+h2{
+  margin-top: -10px
+}
+
+h3{
+  margin-top: -15px
+}
+
 input{
   width: 290px;
   border: none;
@@ -88,6 +96,7 @@ input{
 
 p{
   font-size: 18px;
+  margin-top: -10px
 }
 
 a{
@@ -100,9 +109,10 @@ a{
   letter-spacing: 0.1em;
   font-weight: 400;
   padding: 10px 30px;
-  transition: 0.5s;
+  /* transition: 0.5s; */
   border-radius: 50px;
   margin: auto;
+  margin-left: 10px;
 }
 a:hover{
   background: skyblue;
@@ -119,19 +129,19 @@ a:hover{
   background: #fff;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
   border-radius: 10px;
-  transition: top 0ms ease-in-out 200ms,
+  /* transition: top 0ms ease-in-out 200ms,
               opacity 200ms ease-in-out 0ms,
-              transform 20ms ease-in-out 0ms;
-  visibility: visible;
+              transform 20ms ease-in-out 0ms; */
+  visibility: hidden;
 }
 
 .popup.active{
   top: 50%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
-  transition: top 0ms ease-in-out 0ms,
+  /* transition: top 0ms ease-in-out 0ms,
               opacity 200ms ease-in-out 0ms,
-              transform 20ms ease-in-out 0ms;
+              transform 20ms ease-in-out 0ms; */
 }
 
 .popup .btn-close{
@@ -194,7 +204,7 @@ a:hover{
   color: #f5f5f5;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.5s;
+  /* transition: 0.5s; */
 }
 .popup .form .form-element button:hover{
   letter-spacing: 0.25em;
