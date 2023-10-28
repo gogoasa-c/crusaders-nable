@@ -24,7 +24,7 @@ public class User {
     private Integer age;
 
     @Column
-    UserSex userSexList;
+    UserSex userSex;
 
 
 }
