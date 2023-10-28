@@ -1,5 +1,7 @@
 package com.nable.hackathon.Aid.las.controller;
 
+import com.nable.hackathon.Aid.las.data.attendee.AttendeeRequestData;
+import com.nable.hackathon.Aid.las.data.attendee.AttendeeResponseData;
 import com.nable.hackathon.Aid.las.entity.Attendee;
 import com.nable.hackathon.Aid.las.service.AttendeeService;
 import jakarta.annotation.Resource;
@@ -15,7 +17,7 @@ public class AttendeeController {
     @Resource
     public AttendeeService attendeeService;
     @GetMapping("/{attendeeId}")
-    public ResponseEntity<Attendee> getAttendee(@PathVariable Integer attendeeId) {
+    public ResponseEntity<AttendeeResponseData> getAttendee(@PathVariable Integer attendeeId) {
         log.info("Entered getAttendee with attendeeId: {}", attendeeId);
 
         // to be modified with service method call
@@ -23,7 +25,7 @@ public class AttendeeController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Attendee> createAttendee(@RequestBody Attendee attendee) {
+    public ResponseEntity<AttendeeResponseData> createAttendee(@RequestBody Attendee attendee) {
         log.info("Entered createAttendee");
 
         // to be modified with service method call
@@ -31,7 +33,8 @@ public class AttendeeController {
     }
 
     @PutMapping("/{attendeeId}")
-    public ResponseEntity<Attendee> updateAttendee(@PathVariable Integer attendeeId, @RequestBody Attendee attendee) {
+    public ResponseEntity<AttendeeResponseData> updateAttendee(@PathVariable Integer attendeeId,
+                                                               @RequestBody AttendeeRequestData attendee) {
         log.info("Entered updateAttendee with attendeeId: {} and attendee: {}", attendeeId, attendee);
 
         // to be modified with service method call
@@ -39,7 +42,7 @@ public class AttendeeController {
     }
 
     @DeleteMapping("/{attendeeId}")
-    public ResponseEntity<Attendee> deleteAttendee(@PathVariable Integer attendeeId) {
+    public ResponseEntity<Void> deleteAttendee(@PathVariable Integer attendeeId) {
         log.info("Entered deleteAttendee with attendeeId: {}", attendeeId);
 
         // to be modified with service method call

@@ -1,5 +1,7 @@
 package com.nable.hackathon.Aid.las.controller;
 
+import com.nable.hackathon.Aid.las.data.activity.ActivityRequestData;
+import com.nable.hackathon.Aid.las.data.activity.ActivityResponseData;
 import com.nable.hackathon.Aid.las.entity.Activity;
 import com.nable.hackathon.Aid.las.service.ActivityService;
 import jakarta.annotation.Resource;
@@ -16,7 +18,7 @@ public class ActivityController {
     public ActivityService activityService;
 
     @GetMapping("/{activityId}")
-    public ResponseEntity<Activity> getActivity(@PathVariable Integer activityId) {
+    public ResponseEntity<ActivityResponseData> getActivity(@PathVariable Integer activityId) {
         log.info("Entered getActivity with activityId: {}", activityId);
 
         // to be modified with service method call
@@ -24,7 +26,7 @@ public class ActivityController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Activity> createActivity(@RequestBody Activity activity) {
+    public ResponseEntity<ActivityResponseData> createActivity(@RequestBody Activity activity) {
         log.info("Entered createActivity with activity: {}", activity);
 
         // to be modified with service method call
@@ -32,7 +34,8 @@ public class ActivityController {
     }
 
     @PutMapping("/{activityId}/update")
-    public ResponseEntity<Activity> updateActivity(@PathVariable Integer activityId, @RequestBody Activity activity) {
+    public ResponseEntity<ActivityResponseData> updateActivity(@PathVariable Integer activityId,
+                                                               @RequestBody ActivityRequestData activity) {
         log.info("Entered updateActivity with activityId: {} and activity: {}", activityId, activity);
 
         // to be modified with service method call
@@ -40,7 +43,7 @@ public class ActivityController {
     }
 
     @DeleteMapping("/{activityId}/delete")
-    public ResponseEntity<Activity> deleteActivity(@PathVariable Integer activityId) {
+    public ResponseEntity<Void> deleteActivity(@PathVariable Integer activityId) {
         log.info("Entered deleteActivity with activityId: {}", activityId);
 
         // to be modified with service method call
