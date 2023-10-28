@@ -3,14 +3,14 @@ import logo from "./logo_noBG.png";
 //import { useState } from 'react'
 import SearchIcon from './components/search.svg'
 import Event from './components/event.jsx'
+import axios from 'axios'
 
-let names=["Ingrijire animale", "Curatare parc", "Pisici", "Serving food at homeless shelter", "N/A"]
-let imageUrls=["https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jp",
-"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/8a/1d/f5/herastrau-park.jpg?w=1200&h=-1&s=1",
-"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jpg",
-"https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX10274842.jpg", "nono"]
-let locations=["Location1", "Location2", "Location3", "Location4", "Location5"]
-let startTimes=["Time1", "Time2", "Time3", "Time4", "Time5"]
+let names=[]
+let imageUrls=[]
+let locations=[]
+let startTimes=[]
+let descriptions = []
+let activityTags = []
 //new Date(startTime)
 
 const callDb = () => {
