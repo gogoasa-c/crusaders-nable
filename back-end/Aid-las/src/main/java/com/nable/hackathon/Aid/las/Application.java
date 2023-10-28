@@ -140,7 +140,7 @@ public class Application implements CommandLineRunner {
 		activity1.setAttendees(Set.of(attendee1, attendee2));
 		activity1.setDescription("Impreuna cu 2 experti gradinari vom planta 11 tipuri diferite de " +
 				"flori exotice adunate din Europa, Asia, Australia si America de Sud.");
-		activity1.setImageUrl("back-end/Aid-las/src/main/java/com/nable/hackathon/Aid/las/hardCodedImages/Exotic_Flowers.jpg");
+		activity1.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/8/87/Exotic_Flowers.jpg");
 		activity1.setLocation("Bucuresti, Gradina Botanica");
 		activity1.setStartTime(LocalDateTime.of(2023, 11, 7, 8, 30));
 		activity1.setActivityTagList(List.of(ActivityTag.PLANTING));
@@ -154,8 +154,7 @@ public class Application implements CommandLineRunner {
 		activity2.setName("Curatenie in parcul Herastrau");
 		activity2.setAttendees(Set.of(attendee1, attendee2));
 		activity2.setDescription("Vom curata parcul Herastrau de gunoaie");
-		activity2.setImageUrl("back-end/Aid-las/src/main/java/com/nable/hackathon/Aid/las/hardCodedImages/" +
-				"Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG");
+		activity2.setImageUrl("https://en.wikipedia.org/wiki/King_Michael_I_Park#/media/File:Parcul_Herastrau_park_lake_Bucharest_Bucuresti_Romania_2.JPG");
 		activity2.setLocation("Bucuresti, Parcul Herastrau");
 		activity2.setStartTime(LocalDateTime.of(2023, 11, 10, 10, 0));
 		activity2.setActivityTagList(List.of(ActivityTag.CLEANUP));
