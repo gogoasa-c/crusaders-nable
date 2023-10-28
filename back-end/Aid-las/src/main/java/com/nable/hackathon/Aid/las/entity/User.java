@@ -26,6 +26,8 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "activityId")
+    @Getter
+    @Setter
     Set<Activity> activities;
 
     @Column
@@ -33,4 +35,8 @@ public class User {
 
     @Column
     UserSex userSex;
+
+    public void setActivitySet(Set<Activity> activitySet) {
+        this.activities = activitySet;
+    }
 }
