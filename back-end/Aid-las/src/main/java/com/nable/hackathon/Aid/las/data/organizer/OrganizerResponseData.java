@@ -10,4 +10,5 @@ public class OrganizerResponseData {
     private String name;
     private Integer age;
     private String userSex;
+    private String email;
 }

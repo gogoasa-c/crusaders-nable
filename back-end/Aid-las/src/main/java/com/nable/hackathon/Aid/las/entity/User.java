@@ -36,6 +36,9 @@ public class User {
     @Column
     UserSex userSex;
 
+    @Column
+    private String email;
+
     public void setActivitySet(Set<Activity> activitySet) {
         this.activities = activitySet;
     }

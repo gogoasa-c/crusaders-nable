@@ -66,6 +66,10 @@ public class OrganizerService {
             }
         }
 
+        if (organizerRequestData.getEmail() != null) {
+            organizer.setEmail(organizerRequestData.getEmail());
+        }
+
         organizerRepository.save(organizer);
 
         return OrganizerMapper.toOrganizerResponseData(organizer);

@@ -11,6 +11,7 @@ public class OrganizerMapper {
                 .username(organizer.getUsername())
                 .age(organizer.getAge())
                 .userSex(organizer.getUserSex().toString())
+                .email(organizer.getEmail())
                 .build();
     }
 

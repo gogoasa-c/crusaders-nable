@@ -51,6 +51,7 @@ public class Application implements CommandLineRunner {
 		organizer.setAge(10);
 		organizer.setUsername("Organizer 1");
 		organizer.setPassword("sfklgdf");
+		organizer.setEmail("asdsad@sda");
 
 		organizerRepository.save(organizer);
 
@@ -87,6 +88,7 @@ public class Application implements CommandLineRunner {
 		user.setUserId(5);
 		user.setUsername("User 1");
 		user.setPassword("sfklgdf");
+		user.setEmail("asdsa@asdsa");
 
 		Attendee attendee = new Attendee();
 		attendee.setUserId(2);
@@ -94,6 +96,7 @@ public class Application implements CommandLineRunner {
 		attendee.setUserSex(UserSex.MALE);
 		attendee.setUsername("Attendee 1");
 		attendee.setPassword("sfklgdf");
+		attendee.setEmail("zzzz@ssss");
 
 		attendeeRepository.save(attendee);
 
@@ -104,6 +107,7 @@ public class Application implements CommandLineRunner {
 		organizer1.setPassword("parola10");
 		organizer1.setAge(40);
 		organizer1.setUserSex(UserSex.MALE);
+		organizer1.setEmail("dummar@yahoo.com");
 
 		organizerRepository.save(organizer1);
 
@@ -113,6 +117,7 @@ public class Application implements CommandLineRunner {
 		organizer2.setPassword("parola11");
 		organizer2.setAge(33);
 		organizer2.setUserSex(UserSex.FEMALE);
+		organizer2.setEmail("mariamaripop@gmail.com");
 
 		organizerRepository.save(organizer2);
 
@@ -122,6 +127,7 @@ public class Application implements CommandLineRunner {
 		attendee1.setPassword("parola100");
 		attendee1.setAge(18);
 		attendee1.setUserSex(UserSex.MALE);
+		attendee1.setEmail("dorinmiron@yahoo.com");
 
 		attendeeRepository.save(attendee1);
 
@@ -131,6 +137,7 @@ public class Application implements CommandLineRunner {
 		attendee2.setPassword("parola101");
 		attendee2.setAge(24);
 		attendee2.setUserSex(UserSex.FEMALE);
+		attendee2.setEmail("alinaFLO@gmail.com");
 
 		attendeeRepository.save(attendee2);
 

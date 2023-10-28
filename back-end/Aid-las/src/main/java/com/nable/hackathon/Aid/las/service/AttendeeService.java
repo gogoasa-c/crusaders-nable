@@ -71,6 +71,10 @@ public class AttendeeService {
             attendee.setUserSex(UserSex.valueOf(attendeeRequestData.getUserSex()));
         }
 
+        if (attendeeRequestData.getEmail() != null) {
+            attendee.setEmail(attendeeRequestData.getEmail());
+        }
+
         attendeeRepository.save(attendee);
 
         return AttendeeMapper.toAttendeeResponseData(attendee);

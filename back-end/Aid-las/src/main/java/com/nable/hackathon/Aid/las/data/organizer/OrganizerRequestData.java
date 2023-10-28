@@ -11,4 +11,5 @@ public class OrganizerRequestData {
     private String password;
     private Integer age;
     private String userSex;
+    private String email;
 }

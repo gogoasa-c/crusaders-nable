@@ -18,4 +18,5 @@ public class AttendeeResponseData {
     private Set<Activity> activitySet;
     private Integer age;
     private String userSex;
+    private String email;
 }

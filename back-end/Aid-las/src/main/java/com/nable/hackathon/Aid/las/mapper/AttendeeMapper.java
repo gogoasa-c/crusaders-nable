@@ -22,6 +22,7 @@ public class AttendeeMapper {
         attendee.setUsername(attendeeRequestData.getUsername());
         attendee.setPassword(attendeeRequestData.getPassword());
         attendee.setUserSex(UserSex.valueOf(attendeeRequestData.getUserSex()));
+        attendee.setEmail(attendeeRequestData.getEmail());
 
         return attendee;
     }
