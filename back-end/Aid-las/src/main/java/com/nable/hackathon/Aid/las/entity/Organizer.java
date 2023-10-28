@@ -10,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 @Entity
+@Data
 public class Organizer extends User {
 
 }
