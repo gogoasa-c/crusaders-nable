@@ -27,6 +27,7 @@ public class ActivityMapper {
             .imageUrl(activityRequestData.getImageUrl())
             .location(activityRequestData.getLocation())
             .startTime(activityRequestData.getStartTime())
+            .organizerId(activityRequestData.getOrganizerId())
             .activityTagList(activityRequestData.getActivityTagList()
                 .stream()
                 .map(ActivityTag::valueOf).toList())

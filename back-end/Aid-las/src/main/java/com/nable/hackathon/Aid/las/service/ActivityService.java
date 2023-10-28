@@ -23,10 +23,14 @@ public class ActivityService {
     private ActivityRepository activityRepository;
 
     public ActivityResponseData getActivity(Integer activityId) {
-        Activity activity = activityRepository.findById(activityId)
-            .orElseThrow(() -> new RuntimeException("Activity not found"));
+        Optional<Activity> activity = activityRepository.findById(activityId);
 
-        return ActivityMapper.toActivityResponseData(activity);
+        if (activity.isEmpty()) {
+            log.error("Activity not found");
+            return new ActivityResponseData();
+        }
+
+        return ActivityMapper.toActivityResponseData(activity.get());
     }
 
     public ActivityResponseData createActivity(ActivityRequestData activityRequestData) {
@@ -79,6 +83,7 @@ public class ActivityService {
             activity.setOrganizerId(activityRequestData.getOrganizerId());
         }
 
+        activityRepository.save(activity);
 
         return ActivityMapper.toActivityResponseData(activity);
     }
