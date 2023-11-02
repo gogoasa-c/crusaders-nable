@@ -19,6 +19,7 @@ public class ActivityController {
     @Resource
     public ActivityService activityService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{activityId}")
     public ResponseEntity<ActivityResponseData> getActivity(@PathVariable Integer activityId) {
         log.info("Entered getActivity with activityId: {}", activityId);
@@ -26,6 +27,7 @@ public class ActivityController {
         return ResponseEntity.ok(activityService.getActivity(activityId));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/create")
     public ResponseEntity<ActivityResponseData> createActivity(@RequestBody ActivityRequestData activityRequestData,
                                                                @RequestHeader("username") String username) {
@@ -34,6 +36,7 @@ public class ActivityController {
         return ResponseEntity.ok(activityService.createActivity(activityRequestData, username));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/{activityId}/update")
     public ResponseEntity<ActivityResponseData> updateActivity(@PathVariable Integer activityId,
                                                                @RequestBody ActivityRequestData activity) {
@@ -42,6 +45,7 @@ public class ActivityController {
         return ResponseEntity.ok(activityService.updateActivity(activityId, activity));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{activityId}/delete")
     public ResponseEntity<Void> deleteActivity(@PathVariable Integer activityId) {
         log.info("Entered deleteActivity with activityId: {}", activityId);
