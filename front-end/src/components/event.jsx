@@ -32,8 +32,7 @@ function Event(props) {
       </>
     );
   else {
-    return <div color="#e6f2fa"></div>;
+    return;
   }
 }
-
 export default Event;

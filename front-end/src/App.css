@@ -83,6 +83,7 @@ input{
 
 .eventsContainer ul li{
   list-style-type: none;
+  visibility: visible;
 }
 
 .singleEventContainer{
